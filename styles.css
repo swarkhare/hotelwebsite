@@ -1,178 +1,405 @@
-body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    color: #333;
-  }
-  
-  section {
-    padding: 60px 20px;
-  }
-  
-  /* Welcome Section Styles */
+ body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+/* Welcome Section */
 .welcome {
-    background: url('Welcome.jpg') center center/cover no-repeat;
-    height: 100vh;
-    position: relative;
-    display: flex;
+  background: url('Welcome.jpg') center center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.book-btn, .explore-btn {
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.book-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.book-btn:hover,
+.explore-btn:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-text {
+  max-width: 90%;
+}
+
+.welcome-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.welcome-text span {
+  font-weight: bold;
+}
+
+/* About Us */
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+/* Highlights */
+.highlights {
+  background-color: #fdfaf5;
+  text-align: center;
+}
+
+.highlight-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Accommodations */
+.accommodations {
+  background-color: #fdfaf5;
+  text-align: center;
+}
+
+.accommodation-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.room-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 15px;
+}
+
+.room-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Family Suite */
+.family-suite {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.suite-text {
+  flex: 1;
+}
+
+.suite-text h2 {
+  font-size: 2rem;
+}
+
+.suite-image {
+  flex: 1;
+  text-align: center;
+}
+
+.suite-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.caption {
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #aaa;
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Gallery Section */
+.suite-gallery {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Promos */
+.promos {
+  text-align: center;
+  background-color: #fdfaf5;
+}
+
+.promo-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.promo-card {
+  width: 250px;
+  text-align: center;
+}
+
+.promo-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.promo-card p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  background-color: #4d2c1c;
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Georgia', serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+}
+
+.footer-box p {
+  margin: 5px 0;
+}
+
+.social-icons a img {
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.social-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #4d2c1c;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.social-btn:hover {
+  background-color: #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us,
+  .family-suite,
+  .promo-cards,
+  .footer-content {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .book-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-  }
-  
-  .book-btn:hover {
-    background-color: #f2f2f2;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .welcome-text {
-    max-width: 90%;
-  }
-  
-  .welcome-text p {
-    letter-spacing: 2px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .welcome-text h1 {
-    font-size: 3rem;
-    margin: 0 0 20px;
-    line-height: 1.2;
-  }
-  
-  .welcome-text span {
-    font-weight: bold;
-  }
-  
-  .explore-btn {
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .explore-btn:hover {
-    background-color: #f2f2f2;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .welcome-text h1 {
-      font-size: 2.2rem;
-    }
-  
-    .book-btn {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      top: 15px;
-      right: 15px;
-    }
-  
-    .explore-btn {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .welcome-text h1 {
-      font-size: 1.8rem;
-    }
-  
-    .welcome-text p {
-      font-size: 0.9rem;
-    }
-  
-    .book-btn, .explore-btn {
-      font-size: 0.85rem;
-      padding: 6px 14px;
-    }
-  }
-  
-  /* About Us Section */
-  .about-us {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 40px;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
-  .about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-  
-  .about-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .about-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-  }
-  
-  /* Highlights Section */
-  .highlights {
-    background-color: #fdfaf5;
     text-align: center;
   }
-  
-  .highlights h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
+
+  .room-card {
+    width: 90%;
   }
-  
-  .highlight-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+
+  .gallery-img img {
+    width: 90%;
   }
-  
-  .card {
-    width: 250px;
+
+  .promo-card,
+  .footer-box {
+    margin-bottom: 20px;
   }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .social-icons a img {
+    margin: 5px;
   }
+}                   
+/* Booking Form Section */
+.booking-form {
+  background-color: #fff8f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.booking-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.booking-form input,
+.booking-form button,
+.booking-form select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  background-color: #4d2c1c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #3b1f14;
+}
+
+/* Toggle Button Style */
+.mode-toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 10px 15px;
+  background-color: #ffffffcc;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.mode-toggle-btn:hover {
+  background-color: #eee;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .welcome,
+.dark-mode .accommodations,
+.dark-mode .promos,
+.dark-mode .booking-form,
+.dark-mode .highlights {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .footer {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-mode .room-card,
+.dark-mode .promo-card,
+.dark-mode .footer-box,
+.dark-mode .about-us,
+.dark-mode .family-suite {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.dark-mode .book-btn,
+.dark-mode .explore-btn,
+.dark-mode .social-btn,
+.dark-mode .mode-toggle-btn,
+.dark-mode .booking-form button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode .book-btn:hover,
+.dark-mode .explore-btn:hover,
+.dark-mode .social-btn:hover,
+.dark-mode .booking-form button:hover {
+  background-color: #444;
+}
+
+    
+    
+    
   
-  .card p {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 0.95rem;
-  }
   
