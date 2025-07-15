@@ -8,8 +8,11 @@
 </head>
 <body>
 
+  <!-- Dark/Light Mode Toggle Button -->
+  <button class="mode-toggle-btn" onclick="toggleMode()">🌗 Choose Mode</button>
+
   <!-- Welcome Section -->
-  <section class="welcome">
+  <section class="welcome" id="welcome">
     <button class="book-btn">Book a Stay</button>
     <div class="welcome-text">
       <p>Welcome to</p>
@@ -19,7 +22,7 @@
   </section>
 
   <!-- About Us Section -->
-  <section class="about-us">
+  <section class="about-us" id="about">
     <div class="about-text">
       <h2>About Us</h2>
       <p>
@@ -32,7 +35,7 @@
   </section>
 
   <!-- Highlights Section -->
-  <section class="highlights">
+  <section class="highlights" id="highlights">
     <h2>Highlights</h2>
     <div class="highlight-cards">
       <div class="card">
@@ -50,8 +53,150 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Accommodations Section -->
+  <section class="accommodations" id="accommodations">
+    <h2>Accommodations</h2>
+    <div class="accommodation-cards">
+      <div class="room-card">
+        <img src="room1.jpeg" alt="Luxury Room" />
+        <div class="room-info">
+          <h3>LUXURY ROOM</h3>
+          <p>2 adults | 1 child below 7</p>
+          <p>from $189 a night</p>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="room2.jpg" alt="Sea View Room" />
+        <div class="room-info">
+          <h3>LUXURY GRANDE ROOM SEA VIEW</h3>
+          <p>2 adults | 1 child below 7</p>
+          <p>from $209 a night</p>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="room3.jpg" alt="City View Room" />
+        <div class="room-info">
+          <h3>TAJ CLUB ROOM CITY VIEW</h3>
+          <p>4 adults | 2 children below 7</p>
+          <p>from $399 a night</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Family Suite Section -->
+  <section class="family-suite">
+    <div class="suite-text">
+      <h2>The Family Suite</h2>
+      <p>
+        Indulge in the allure of three unique suites, each boasting its own captivating history and charm. Select from our classic Rajput Suite, the maritime-inspired Bell Tower Duplex Suite, or the enchanting Ravi Shankar Two Bedroom Duplex Suite. Every nook showcases a collection of original art and artifacts, offering a treasure trove of history and heritage waiting to be explored and cherished.
+      </p>
+    </div>
+    <div class="suite-image">
+      <img src="suite1.jpg" alt="Family Suite" />
+      <p class="caption">Tajness is the way we do, what we do.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="suite-gallery">
+    <div class="gallery-img">
+      <img src="suite2.jpg" alt="Suite Living Room" />
+    </div>
+    <div class="gallery-img">
+      <img src="suite3.jpg" alt="Luxury Suite" />
+    </div>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section class="booking-form" id="booking-form">
+    <h2>Book Your Stay</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="date" placeholder="Check-in Date" required />
+      <input type="date" placeholder="Check-out Date" required />
+      <input type="number" placeholder="Number of Guests" required min="1" />
+      <select required>
+        <option value="">Select Room Type</option>
+        <option value="luxury-room">LUXURY ROOM — $189</option>
+        <option value="sea-view">LUXURY GRANDE ROOM SEA VIEW — $289</option>
+        <option value="city-view">TAJ CLUB ROOM CITY VIEW — $399</option>
+        <option value="family-suite">Family Suite — $999</option>
+      </select>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- Promos and Offers Section -->
+  <section class="promos" id="promos">
+    <h2>Promos and Offers</h2>
+    <div class="promo-cards">
+      <div class="promo-card">
+        <img src="promo1.jpg" alt="Early Bird Discount" />
+        <p>Early Bird Discount</p>
+      </div>
+      <div class="promo-card">
+        <img src="promo2.jpg" alt="Jiva Spa" />
+        <p>Jiva Spa</p>
+      </div>
+      <div class="promo-card">
+        <img src="promo3.jpeg" alt="Book 3 Nights Get 1 Night Free" />
+        <p>Book 3 Nights, Get 1 Night Free</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>Reservations Office</h3>
+        <p>📍 Colaba, Mumbai</p>
+        <p>📞 123-456-7890</p>
+        <p>✉️ hello@reallygreatsite.com</p>
+      </div>
+      <div class="footer-box">
+        <h3>Office Hours</h3>
+        <p>Monday to Friday<br>9:00 am to 6:00 pm</p>
+        <p>Saturday<br>9:00 am to 12:00 noon</p>
+      </div>
+      <div class="footer-box">
+        <h3>Get Social</h3>
+        <div class="social-icons">
+          <a href="#"><img src="facebook.jpg" alt="Facebook" /></a>
+          <a href="#"><img src="x-icon.jpg" alt="X" /></a>
+          <a href="#"><img src="instagram.jpeg" alt="Instagram" /></a>
+        </div>
+        <button class="social-btn">Tag us in your photos!</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.querySelector(".explore-btn").addEventListener("click", () => {
+      document.querySelector("#accommodations").scrollIntoView({ behavior: "smooth" });
+    });
+
+    document.querySelector(".book-btn").addEventListener("click", () => {
+      document.querySelector("#booking-form").scrollIntoView({ behavior: "smooth" });
+    });
+
+    document.querySelector(".social-btn").addEventListener("click", () => {
+      alert("Don't forget to tag us in your photos on Instagram, Facebook, or Twitter!");
+    });
+
+    // Toggle Mode
+    function toggleMode() {
+      const isDark = confirm("Would you like to switch to Dark Mode?");
+      if (isDark) {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    }
+  </script>
+
 </body>
 </html>
-
-
