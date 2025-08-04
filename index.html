@@ -109,23 +109,26 @@
   </section>
 
   <!-- Booking Form Section -->
-  <section class="booking-form" id="booking-form">
-    <h2>Book Your Stay</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="date" placeholder="Check-in Date" required />
-      <input type="date" placeholder="Check-out Date" required />
-      <input type="number" placeholder="Number of Guests" required min="1" />
-      <select required>
-        <option value="">Select Room Type</option>
-        <option value="luxury-room">LUXURY ROOM — $189</option>
-        <option value="sea-view">LUXURY GRANDE ROOM SEA VIEW — $289</option>
-        <option value="city-view">TAJ CLUB ROOM CITY VIEW — $399</option>
-        <option value="family-suite">Family Suite — $999</option>
-      </select>
-      <button type="submit">Submit Booking</button>
-    </form>
+<section class="booking-form" id="booking-form">
+  <h2>Book Your Stay</h2>
+  <form id="bookingForm">
+    <input type="text" name="fullName" placeholder="Full Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <input type="date" name="checkin" required />
+    <input type="date" name="checkout" required />
+    <input type="number" name="guests" placeholder="Number of Guests" required min="1" />
+    <select name="roomType" required>
+      <option value="">Select Room Type</option>
+      <option value="luxury-room">LUXURY ROOM — $189</option>
+      <option value="sea-view">LUXURY GRANDE ROOM SEA VIEW — $289</option>
+      <option value="city-view">TAJ CLUB ROOM CITY VIEW — $399</option>
+      <option value="family-suite">Family Suite — $999</option>
+    </select>
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
+
+
   </section>
 
   <!-- Promos and Offers Section -->
@@ -152,9 +155,9 @@
     <div class="footer-content">
       <div class="footer-box">
         <h3>Reservations Office</h3>
-        <p> <a href = "https://www.google.com/maps/place/Colaba,+Mumbai,+Maharashtra,+India/@18.9095253,72.8191906,14z/data=!3m1!4b1!4m6!3m5!1s0x3be7d19aa30ec295:0x1bb7dd5bce3d0bcf!8m2!3d18.9067031!4d72.8147123!16zL20vMDJ5NDRk?entry=ttu&g_ep=EgoyMDI1MDczMC4wIKXMDSoASAFQAw%3D%3D/">📍 Colaba, Mumbai </a></p> 
+        <p>📍 Colaba, Mumbai</p>
         <p>📞 123-456-7890</p>
-        <p>✉️ reservations@tajmahal.com</p>
+        <p>✉️ hello@reallygreatsite.com</p>
       </div>
       <div class="footer-box">
         <h3>Office Hours</h3>
@@ -164,9 +167,9 @@
       <div class="footer-box">
         <h3>Get Social</h3>
         <div class="social-icons">
-          <a href="https://www.facebook.com/"><img src="facebook.jpg" alt="Facebook" /></a>
-          <a href="https://x.com/"><img src="x-icon.jpg" alt="X" /></a>
-          <a href="https://www.instagram.com/"><img src="instagram.jpeg" alt="Instagram" /></a>
+          <a href="#"><img src="facebook.jpg" alt="Facebook" /></a>
+          <a href="#"><img src="x-icon.jpg" alt="X" /></a>
+          <a href="#"><img src="instagram.jpeg" alt="Instagram" /></a>
         </div>
         <button class="social-btn">Tag us in your photos!</button>
       </div>
@@ -196,10 +199,23 @@
         document.body.classList.remove("dark-mode");
       }
     }
+    // Process booking form
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent page refresh
+
+  // Collect form data
+  const fullName = this.fullName.value;
+  const email = this.email.value;
+  const checkin = this.checkin.value;
+  const checkout = this.checkout.value;
+  const guests = this.guests.value;
+  const roomType = this.roomType.value;
+
+  // Display confirmation (or send to backend via fetch if needed)
+  alert(`Thank you, ${fullName}!\nYour booking from ${checkin} to ${checkout} for ${guests} guest(s) in a ${roomType} has been received.\nA confirmation email will be sent to ${email}.`);
+});
+
   </script>
 
 </body>
 </html>
-
-
-
